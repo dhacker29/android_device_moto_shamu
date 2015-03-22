@@ -186,12 +186,14 @@ PRODUCT_PACKAGES += \
     libqomx_core \
     libmmcamera_interface \
     libmmjpeg_interface \
+    libmm-qcamera \
     camera.msm8084 \
     mm-jpeg-interface-test \
     mm-qcamera-app
 
 PRODUCT_PACKAGES += \
-    libion
+    libion \
+    libemoji
 
 PRODUCT_PACKAGES += \
     lights.shamu
@@ -261,6 +263,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+   persist.rcs.supported=0 \
+   persist.radio.sib16_support=1
 
 # Camera configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
